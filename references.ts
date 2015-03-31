@@ -5,6 +5,8 @@
 /// <reference path="./typewriting/Model/User.ts" />
 /// <reference path="./typewriting/Model/Key.ts" />
 
+/// <reference path="./components/LessonService.ts" />
+
 /// <reference path="./typewriting/View/KeyDrawer.ts" />
 
 /// <reference path="./lib/types/angular/angular-local-storage.d.ts" />
@@ -15,3 +17,6 @@
 /// <reference path="./lib/types/jquery/jquery.d.ts" />
 /// <reference path="./lib/types/jquery/jquery.timer.d.ts" />
 /// <reference path="./lib/types/jquery/jqueryui.d.ts" />
+
+/// <reference path="./lib/types/hashset.d.ts" />
+/// <reference path="./lib/types/hashtable.d.ts" />

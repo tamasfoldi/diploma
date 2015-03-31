@@ -1,0 +1,6 @@
+﻿<h3 align="center">Select a lesson</h3>
+<div class="btn-group">    
+    <button type="button" class="btn btn-default btn-sm" ng-repeat="lesson in menu.lessonDict" ng-click="menu.loadLesson($index)">
+            {{lesson.name}}
+    </button>
+</div>

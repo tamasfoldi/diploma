@@ -10,15 +10,25 @@
     <script src="lib/jquery/jquery.timer.js"></script>
 
     <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular/angular-route.min.js"></script>
-    <script src="lib/angular/angular-ui-bootstrap.min.js"></script>
-    <script src="lib/angular/angular-local-storage.min.js"></script>
+    <script src="lib/angular/angular-route.js"></script>
+    <script src="lib/angular/angular-ui-bootstrap.js"></script>
+    <script src="lib/angular/angular-local-storage.js"></script>
+
+    <script src="lib/hashtable.js"></script>
+    <script src="lib/hashset.js"></script>
+    
+
+    <script src="typewriting/Model/Lesson.js"></script>
+    <script src="typewriting/Model/LessonText.js"></script>
+
+    <script src="components/LessonService.js"></script>
 
     <!--<script src="typewriting/Model/CompletedLesson.js"></script>-->
-    <!--<script src="typewriting/Model/Lesson.js"></script>-->
-    <script src="typewriting/Model/LessonText.js"></script>
+
     <!--<script src="typewriting/Model/Statistic.js"></script>-->
     <!--<script src="typewriting/Model/User.js"></script>-->
+
+    <script src="menu/MenuController.js"></script>
 
     <script type="text/javascript" src="app.js"></script>
 
@@ -27,10 +37,11 @@
     <link rel="stylesheet" href="app.css" type="text/css" />
 
 </head>
-<body ng-controller="TypewritingCtrl">
+<body>
     <div id="site">
-        <h1>My TypeWriting App</h1>
-        <p>Please type the following text: <span>{{ textToType }}</span></p>
+        <article>
+            <ng-view></ng-view>
+        </article>
     </div>
 </body>
 

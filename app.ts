@@ -1,12 +1,18 @@
 ﻿///<reference path='references.ts'/>
 module app {
-    import LessonText = Model.LessonText;
-
-    var lessonText = new LessonText("This text should be typed");
-
-    var typewritingApp = angular.module('typewritingApp', []);
-
-    typewritingApp.controller('TypewritingCtrl', function ($scope) {
-        $scope.textToType = lessonText.text;
+    var typewritingapp: ng.IModule = angular.module('typewritingApp', ['ngRoute', 'ui.bootstrap', 'LocalStorageModule'])
+        .service('lessonService', app.LessonService)
+        .config(($routeProvider: ng.route.IRouteProvider) => {
+            $routeProvider
+                .when('/', {
+                templateUrl: 'menu/menu.html',
+                controller: app.MenuCtrl,
+                controllerAs: "menu"
+            })
+                .when('/lesson', {
+                redirectTo: function (routeParams, path, search) {
+                    return "/lesson?id="+search.id;
+                }
+            });
     });
 }
