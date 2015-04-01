@@ -1,7 +1,7 @@
 ﻿///<reference path='references.ts'/>
 module app {
     var typewritingapp: ng.IModule = angular.module('typewritingApp', ['ngRoute', 'ui.bootstrap', 'LocalStorageModule'])
-        .service('lessonService', app.LessonService)
+        .service('lessonService', app.LessonService.getInstance)
         .config(($routeProvider: ng.route.IRouteProvider) => {
             $routeProvider
                 .when('/', {
@@ -10,9 +10,9 @@ module app {
                 controllerAs: "menu"
             })
                 .when('/lesson', {
-                redirectTo: function (routeParams, path, search) {
-                    return "/lesson?id="+search.id;
-                }
+                templateUrl: 'typewriting/typewriting.html',
+                controller: app.TypewritingCtrl,
+                controllerAs: "typewriting",
             });
     });
 }

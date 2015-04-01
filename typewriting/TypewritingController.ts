@@ -3,34 +3,34 @@
 module app {
 
     import Lesson = Model.Lesson;
-    import LessonDrawer = View.LessonDrawer;
     import LessonService = app.LessonService;
 
-    import ng = angular;
 
     export class TypewritingCtrl {
+        
+        private location: ng.ILocationService;
+        private lessonService: LessonService;
+        private lessonId: number;
+        private lesson: Lesson;
 
-        modalService: ng.ui.bootstrap.IModalService;
 
-        constructor(lessonService: LessonService, $location: ng.ILocationService, $modal: ng.ui.bootstrap.IModalService) {
-
-            //this.modalService = $modal;
-            //var lesson = lessonService.get();
-
-            //var lessonDrawer: LessonDrawer = new LessonDrawer(lesson);
-            //lessonDrawer.draw();
+        constructor(lessonService: LessonService, $location: ng.ILocationService) {
+            this.location = $location;
+            this.lessonService = lessonService;
+            this.lessonId = this.location.search()["id"];
+            this.lesson = lessonService.getLesson(this.lessonId);
         }
 
         draw() {
-            var modalInstance = this.modalService.open({
-                templateUrl: 'typewriting/templates/newLesson.html',
-                size: 'lg',
-                resolve: {
-                    //items: function () {
-                    //    return $scope.items;
-                    //}
-                }
-            });
+            //var modalInstance = this.modalService.open({
+            //    templateUrl: 'typewriting/templates/newLesson.html',
+            //    size: 'lg',
+            //    resolve: {
+            //        //items: function () {
+            //        //    return $scope.items;
+            //        //}
+            //    }
+            //});
         }
     }
 }

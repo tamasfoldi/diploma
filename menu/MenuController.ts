@@ -6,19 +6,16 @@ module app {
     export class MenuCtrl {
         private location: ng.ILocationService;
         private lessonService: LessonService;
-        private lessonDict = [];
+        private lessons: Array<Lesson>;
 
         constructor($location: ng.ILocationService, lessonService: LessonService) {    
             this.lessonService = lessonService;
             this.location = $location;    
-            var lessons = lessonService.getLessons().values();    
-            for (var i = lessons.length-1; i >= 0; i--) {
-                this.lessonDict.push({ id: lessons[i].id, name: lessons[i].name });
-            }
+            this.lessons = lessonService.getLessons();    
         }    
 
-        loadLesson($index) {
-            this.location.path('/lesson').search('id', $index);
+        loadLesson(id) {
+            this.location.path('/lesson').search('id', id);
         }
     }
 } 

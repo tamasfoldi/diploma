@@ -17,6 +17,3 @@
 /// <reference path="./lib/types/jquery/jquery.d.ts" />
 /// <reference path="./lib/types/jquery/jquery.timer.d.ts" />
 /// <reference path="./lib/types/jquery/jqueryui.d.ts" />
-
-/// <reference path="./lib/types/hashset.d.ts" />
-/// <reference path="./lib/types/hashtable.d.ts" />
