@@ -1,3 +1,8 @@
-﻿<h1>{{typewriting.lesson.name}}</h1>
+﻿<div>
+    <h1>{{typewriting.lesson.name}}</h1>
 
-<p>{{typewriting.lesson.text.text}}</p>
+    <p>{{typewriting.lesson.text.text}}</p>
+
+    <p>{{typewriting.typedText}}</p>
+    <textarea ui-event="{'keyup' : 'typewriting.typing($event)'}" autofocus ng-model="typewriting.typedText" ng-disabled="typewriting.getIsDisabled()"></textarea>
+</div>

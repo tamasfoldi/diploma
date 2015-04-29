@@ -8,7 +8,7 @@ module app {
         private lessonService: LessonService;
         private lessons: Array<Lesson>;
 
-        constructor($location: ng.ILocationService, lessonService: LessonService) {    
+        constructor(lessonService: LessonService, $location: ng.ILocationService) {    
             this.lessonService = lessonService;
             this.location = $location;    
             this.lessons = lessonService.getLessons();    
