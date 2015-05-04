@@ -6,6 +6,7 @@
 /// <reference path="./typewriting/Model/Key.ts" />
 
 /// <reference path="./components/LessonService.ts" />
+/// <reference path="./components/TimeController.ts" />
 
 /// <reference path="./typewriting/View/KeyDrawer.ts" />
 
