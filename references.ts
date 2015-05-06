@@ -1,6 +1,5 @@
 ﻿/// <reference path="./typewriting/Model/CompletedLesson.ts" />
 /// <reference path="./typewriting/Model/Lesson.ts" />
-/// <reference path="./typewriting/Model/LessonText.ts" />
 /// <reference path="./typewriting/Model/Statistic.ts" />
 /// <reference path="./typewriting/Model/User.ts" />
 /// <reference path="./typewriting/Model/Key.ts" />

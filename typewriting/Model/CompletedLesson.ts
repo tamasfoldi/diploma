@@ -6,7 +6,7 @@ module Model {
 
     export class CompletedLesson extends Lesson {
         user: User;
-        typedText: LessonText;
+        typedText: string;
         completedStat: Statistic;
     }
 }  

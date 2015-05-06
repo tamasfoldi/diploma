@@ -2,7 +2,6 @@
 
 module app {
     import Lesson = Model.Lesson;
-    import LessonText = Model.LessonText;
 
     export class LessonService {
         private static _instance: LessonService = null;
@@ -26,7 +25,7 @@ module app {
 
         initLessons() {
             for (var i = 0; i < 10; i++) {
-                this.lessons[i] = new Lesson(i, "Lesson" + i.toString(), new LessonText("This text should be typed"));
+                this.lessons[i] = new Lesson(i, "Lesson" + i.toString(), "This text should be typed");
             }
         }
 

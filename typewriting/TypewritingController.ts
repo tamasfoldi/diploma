@@ -4,6 +4,7 @@ module app {
 
     import Lesson = Model.Lesson;
     import LessonService = app.LessonService;
+    import Statistic = Model.Statistic;
 
     export class TypewritingCtrl {
 
@@ -12,9 +13,8 @@ module app {
         private lessonId: number;
         private lesson: Lesson;
         private typedText: string;
-        private scope: ng.IScope;
+        private scope: any;
         private isDisabled: boolean;
-        private time: number;
 
         constructor(lessonService: LessonService, $location: ng.ILocationService, $scope: ng.IScope) {
             this.location = $location;
@@ -23,22 +23,32 @@ module app {
             this.lesson = lessonService.getLesson(this.lessonId);
             this.scope = $scope;
             this.typedText = "";
-            this.time = 0;
             this.scope.$on('timer-stopped', function (event, data) {
                 var scope: any = event.currentScope
-                scope.typewriting.time = data.millis;
-                scope.typewriting.time = scope.typewriting.time / 1000;
+                scope.typewriting.lesson.getStatistic().calculateTypingSpeed(data.millis);
+                scope.typewriting.lesson.getStatistic().setTime(data.millis);
             });
         }
 
-        typing($event) {
-            if (this.typedText != this.lesson.getText().text.substr(0, this.typedText.length))
-                this.typedText = this.typedText.substr(0, this.typedText.length - 1);
-            if (this.typedText == this.lesson.getText().text) {
-                this.isDisabled = true;
-                this.scope.$broadcast('timer-stop');                
+        keypressHandling($event) {
+            var char: string = String.fromCharCode($event.which);
+            var tempTyped = this.typedText + char;
+            if (tempTyped != this.lesson.getText().substr(0, tempTyped.length)) {
+                $event.preventDefault();
+                this.lesson.getStatistic().increasNofMistakes();
             }
-        }     
+            else {
+                this.lesson.getStatistic().increaseNofCorrectKeyPresses();
+                if (tempTyped == this.lesson.getText()[0]) { //at the first character the timer starts
+                    this.scope.$broadcast('timer-start');
+                }
+                if (tempTyped == this.lesson.getText()) { //at the last character the timer stops and the textarea sets to disabled
+                    this.typedText = tempTyped;
+                    this.isDisabled = true;
+                    this.scope.$broadcast('timer-stop');
+                }
+            }
+        }
 
         getIsDisabled(): boolean {
             return this.isDisabled;

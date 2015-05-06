@@ -21,7 +21,6 @@
                 this.startTime = new Date();
                 var starTime: Date = this.startTime;                
                 var elapsedMs: number = 0;
-                console.log(this.scope);
                 this.timerPromise = this.interval(function () {
                     var now: Date = new Date();
                     //$scope.time = now;

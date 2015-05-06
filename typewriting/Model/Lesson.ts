@@ -5,9 +5,10 @@ module Model {
     export class Lesson {
         private id: number;
         private name: string;
-        private text: LessonText
+        private text: string
+        private statistic: Statistic = new Statistic();
 
-        constructor(id: number, name: string, text: LessonText) {
+        constructor(id: number, name: string, text: string) {
             this.id = id;
             this.name = name;
             this.text = text;
@@ -29,12 +30,16 @@ module Model {
             this.name = name;
         }
 
-        public getText(): LessonText {
+        public getText(): string {
             return this.text;
         }
 
-        public setText(text: LessonText) {
+        public setText(text: string) {
             this.text = text;
+        }
+
+        public getStatistic(): Statistic {
+            return this.statistic;
         }
     }
 } 

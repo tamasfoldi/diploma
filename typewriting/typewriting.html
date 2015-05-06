@@ -1,12 +1,16 @@
 ﻿<div>
-    <h1>{{typewriting.lesson.name}}</h1>
+    <h1>{{typewriting.lesson.getName()}}</h1>
 
-    <p>{{typewriting.lesson.text.text}}</p>
-
-    <p>{{typewriting.typedText}}</p>
-
-    <h1>{{typewriting.time}}</h1>
+    <p>{{typewriting.lesson.getText()}}</p>
 
     <timer ng-model="typewriting.time" ng-hide="true"></timer>
-    <textarea ui-event="{'keyup' : 'typewriting.typing($event)'}" autofocus ng-model="typewriting.typedText" ng-disabled="typewriting.getIsDisabled()"></textarea>
+
+    <form name="typingForm">
+        <textarea name="typedText" ui-event="{'keypress' : 'typewriting.keypressHandling($event)'}"
+                  autofocus ng-model="typewriting.typedText" ng-disabled="typewriting.getIsDisabled()" ng-trim="false" ng-paste="$event.preventDefault()" />
+        {{paste}}
+    </form>
+
+    <div ng-hide="!typewriting.getIsDisabled()">Congratulation you have completed this lesson with the following statistic</div>
+
 </div>
