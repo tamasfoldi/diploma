@@ -26,7 +26,7 @@ module Model {
             console.log(this.getNofKeyPresses() / time)
             console.log(60000 / time)
             console.log(time);
-            this.typingSpeed = (this.getNofKeyPresses() / time) *1000 * (1000 / time);
+            this.typingSpeed = (this.getNofKeyPresses() / (time /1000) ) * (60000 / time);
         }
 
         getNofCorrectKeyPresses(): number {
@@ -45,8 +45,16 @@ module Model {
             return this.time;
         }
 
+        getTimeInSeconds(): number {
+            return this.time / 1000;
+        }
+
         setTime(time: number) {
             this.time = time;
+        }
+
+        getAccuracy(): number {
+            return this.nofCorrectKeyPresses / this.getNofKeyPresses() * 100;
         }
     }
 }

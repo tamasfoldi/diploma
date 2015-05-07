@@ -53,17 +53,5 @@ module app {
         getIsDisabled(): boolean {
             return this.isDisabled;
         }
-
-        draw() {
-            //var modalInstance = this.modalService.open({
-            //    templateUrl: 'typewriting/templates/newLesson.html',
-            //    size: 'lg',
-            //    resolve: {
-            //        //items: function () {
-            //        //    return $scope.items;
-            //        //}
-            //    }
-            //});
-        }
     }
 }
