@@ -20,7 +20,7 @@
                 </tr>
                 <tr>
                     <th>Incorrect keypress: </th>
-                    <td>{{typewriting.lesson.getStatistic().getNofCorrectKeyPresses()}}</td>
+                    <td>{{typewriting.lesson.getStatistic().getNofMistakes()}}</td>
                 </tr>
                 <tr>
                     <th>Total keypress: </th>
@@ -28,7 +28,7 @@
                 </tr>
                 <tr>
                     <th>Accuracy: </th>
-                    <td>{{typewriting.lesson.getStatistic().getAccuracy()}}%</td>
+                    <td>{{typewriting.lesson.getStatistic().getAccuracy() | number:2}}%</td>
                 </tr>
                 <tr>
                     <th>Typing speed: </th>
