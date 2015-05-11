@@ -4,7 +4,6 @@ module app {
         .service('lessonService', app.LessonService.getInstance)
         .controller('TypewritingCtrl', ['LessonService', '$location', '$scope', TypewritingCtrl])
         .controller('MenuCtrl', ['LessonService', '$location', MenuCtrl])
-        .controller('TimeCtrl', ['$interval', '$scope', TimeCtrl])
         .directive('autofocus', ['$timeout', function ($timeout) {
         return {
             restrict: 'A',
@@ -21,11 +20,6 @@ module app {
             templateUrl: 'menu/menu.html',
             controller: app.MenuCtrl,
             controllerAs: "menu"
-        })
-            .when('/timer', {
-            templateUrl: 'timer.html',
-            controller: app.TimeCtrl,
-            controllerAs: "timer"
         })
             .when('/lesson', {
             templateUrl: 'typewriting/typewriting.html',
