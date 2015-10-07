@@ -1,0 +1,13 @@
+﻿{
+  "Compile": {
+    "Extensions": [".ts"],
+    "ExtensionsWithNoOutput": [".d.ts"],
+    "Executable": "compile.bat"
+   },
+  "References": [
+    {"Includes": ["*/App/*.ts", "*/Controllers/*.ts"], "Excludes": ["*/Scripts/typings/angularjs/*.d.ts", "*/Scripts/typings/angular-local-storage/*.d.ts", "*/Scripts/typings/angular-ui-bootstrap/*.d.ts", "*/Scripts/typings/jasmine/*.d.ts"] }
+  ],
+  "Tests": [
+    { "Includes": ["*/Specs/*.ts"], "Excludes": ["*/Specs/*.d.ts"] }
+  ]
+}

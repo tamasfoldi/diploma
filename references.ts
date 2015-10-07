@@ -1,19 +1,25 @@
-﻿/// <reference path="./typewriting/Model/CompletedLesson.ts" />
-/// <reference path="./typewriting/Model/Lesson.ts" />
-/// <reference path="./typewriting/Model/Statistic.ts" />
-/// <reference path="./typewriting/Model/User.ts" />
-/// <reference path="./typewriting/Model/Key.ts" />
+﻿/// <reference path="./Model/ILesson.ts" />
+/// <reference path="./Services/ILessonService.ts" />
+/// <reference path="./Model/Statistic.ts" />
 
-/// <reference path="./components/LessonService.ts" />
-/// <reference path="./components/TimeController.ts" />
 
-/// <reference path="./typewriting/View/KeyDrawer.ts" />
+/// <reference path="./Controllers/TimerController.ts" />
+/// <reference path="./Controllers/LessonController.ts"/>
+/// <reference path="./Controllers/MenuController.ts"/>
 
-/// <reference path="./lib/types/angular/angular-local-storage.d.ts" />
-/// <reference path="./lib/types/angular/angular-route.d.ts" />
-/// <reference path="./lib/types/angular/angular-ui-bootstrap.d.ts" />
-/// <reference path="./lib/types/angular/angular.d.ts" />
+/// <reference path="./Scripts/typings/angular-local-storage/angular-local-storage.d.ts" />
+/// <reference path="./Scripts/typings/angularjs/angular-route.d.ts" />
+/// <reference path="./Scripts/typings/angularjs/angular-resource.d.ts" />
+/// <reference path="./Scripts/typings/angular-ui-bootstrap/angular-ui-bootstrap.d.ts" />
+/// <reference path="./Scripts/typings/angularjs/angular.d.ts" />
+/// <reference path="./Scripts/typings/angularjs/angular-mocks.d.ts" />
+/// <reference path="./Scripts/typings/angular-protractor/angular-protractor.d.ts" />
+/// <reference path="./Scripts/typings/angular-material/angular-material.d.ts" />
 
-/// <reference path="./lib/types/jquery/jquery.d.ts" />
-/// <reference path="./lib/types/jquery/jquery.timer.d.ts" />
-/// <reference path="./lib/types/jquery/jqueryui.d.ts" />
+/// <reference path="./Scripts/typings/selenium-webdriver/selenium-webdriver.d.ts" />
+
+/// <reference path="./Scripts/typings/jasmine/jasmine.d.ts" />
+
+
+/// <reference path="./App/app.ts" />
+
