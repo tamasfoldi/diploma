@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Tests>
+  <Test>
+    <Name>ConfigCtrl should be true (Firefox 41.0.0 (Windows 10 0.0.0))</Name>
+    <DisplayName>ConfigCtrl should be true (Firefox 41.0.0 (Windows 10 0.0.0))</DisplayName>
+    <Outcome>Failed</Outcome>
+    <ErrorStackTrace>minErr/&lt;@F:/Dokumentumok/BME/Diploma/Scripts/angular.js:68:12
+loadModules/&lt;@F:/Dokumentumok/BME/Diploma/Scripts/angular.js:4411:15
+forEach@F:/Dokumentumok/BME/Diploma/Scripts/angular.js:336:11
+loadModules@F:/Dokumentumok/BME/Diploma/Scripts/angular.js:4372:5
+createInjector@F:/Dokumentumok/BME/Diploma/Scripts/angular.js:4297:11
+workFn@F:/Dokumentumok/BME/Diploma/Scripts/angular-mocks.js:2427:44
+angular.mock.inject@F:/Dokumentumok/BME/Diploma/Scripts/angular-mocks.js:2410:30
+@F:/Dokumentumok/BME/Diploma/Specs/controllerSpecs.js:5:1
+env.executeFiltered@F:/Dokumentumok/BME/Diploma/Specs/node_modules/karma-jasmine/lib/boot.js:117:7
+createStartFn/&lt;@F:/Dokumentumok/BME/Diploma/Specs/node_modules/karma-jasmine/lib/adapter.js:171:5
+[2]&lt;/Karma/this.loaded@http://localhost:9876/karma.js:190:7
+@http://localhost:9876/context.html:52:5
+
+
+
+</ErrorStackTrace>
+  </Test>
+</Tests>

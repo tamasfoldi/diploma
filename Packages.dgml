@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="DiplomaMunka" Label="DiplomaMunka" Category="Project" />
+    <Node Id="Angular.UI.Bootstrap 0.13.4" Label="Angular.UI.Bootstrap 0.13.4" Category="Package" />
+    <Node Id="Angular.UI.Utils 0.2.3" Label="Angular.UI.Utils 0.2.3" Category="Package" />
+    <Node Id="AngularJS.Animate 1.4.6" Label="AngularJS.Animate 1.4.6" Category="Package" />
+    <Node Id="AngularJS.Aria 1.4.6" Label="AngularJS.Aria 1.4.6" Category="Package" />
+    <Node Id="AngularJS.Core 1.4.6" Label="AngularJS.Core 1.4.6" Category="Package" />
+    <Node Id="AngularJS.Resource 1.4.6" Label="AngularJS.Resource 1.4.6" Category="Package" />
+    <Node Id="AngularJS.Route 1.4.6" Label="AngularJS.Route 1.4.6" Category="Package" />
+    <Node Id="angularjs.TypeScript.DefinitelyTyped 4.2.2" Label="angularjs.TypeScript.DefinitelyTyped 4.2.2" Category="Package" />
+    <Node Id="angular-local-storage.TypeScript.DefinitelyTyped 2.0.9" Label="angular-local-storage.TypeScript.DefinitelyTyped 2.0.9" Category="Package" />
+    <Node Id="angular-material.TypeScript.DefinitelyTyped 0.1.0" Label="angular-material.TypeScript.DefinitelyTyped 0.1.0" Category="Package" />
+    <Node Id="angular-protractor.TypeScript.DefinitelyTyped 2.1.3" Label="angular-protractor.TypeScript.DefinitelyTyped 2.1.3" Category="Package" />
+    <Node Id="angular-ui-bootstrap.TypeScript.DefinitelyTyped 0.1.7" Label="angular-ui-bootstrap.TypeScript.DefinitelyTyped 0.1.7" Category="Package" />
+    <Node Id="jasmine.TypeScript.DefinitelyTyped 1.4.0" Label="jasmine.TypeScript.DefinitelyTyped 1.4.0" Category="Package" />
+    <Node Id="JasmineTest 2.2.0" Label="JasmineTest 2.2.0" Category="Package" />
+    <Node Id="jQuery 2.1.4" Label="jQuery 2.1.4" Category="Package" />
+    <Node Id="jquery.timer.TypeScript.DefinitelyTyped 0.0.4" Label="jquery.timer.TypeScript.DefinitelyTyped 0.0.4" Category="Package" />
+    <Node Id="jquery.TypeScript.DefinitelyTyped 2.3.0" Label="jquery.TypeScript.DefinitelyTyped 2.3.0" Category="Package" />
+    <Node Id="jQuery.UI.Combined 1.11.4" Label="jQuery.UI.Combined 1.11.4" Category="Package" />
+    <Node Id="Protractor 0.6.0" Label="Protractor 0.6.0" Category="Package" />
+    <Node Id="Selenium.WebDriver 2.46.0" Label="Selenium.WebDriver 2.46.0" Category="Package" />
+    <Node Id="selenium-webdriver.TypeScript.DefinitelyTyped 0.3.9" Label="selenium-webdriver.TypeScript.DefinitelyTyped 0.3.9" Category="Package" />
+  </Nodes>
+  <Links>
+    <Link Source="AngularJS.Animate 1.4.6" Target="AngularJS.Core 1.4.6" Category="Package Dependency" />
+    <Link Source="AngularJS.Aria 1.4.6" Target="AngularJS.Core 1.4.6" Category="Package Dependency" />
+    <Link Source="AngularJS.Resource 1.4.6" Target="AngularJS.Core 1.4.6" Category="Package Dependency" />
+    <Link Source="AngularJS.Route 1.4.6" Target="AngularJS.Core 1.4.6" Category="Package Dependency" />
+    <Link Source="angularjs.TypeScript.DefinitelyTyped 4.2.2" Target="jquery.TypeScript.DefinitelyTyped 2.3.0" Category="Package Dependency" />
+    <Link Source="angular-local-storage.TypeScript.DefinitelyTyped 2.0.9" Target="jquery.TypeScript.DefinitelyTyped 2.3.0" Category="Package Dependency" />
+    <Link Source="angular-local-storage.TypeScript.DefinitelyTyped 2.0.9" Target="angularjs.TypeScript.DefinitelyTyped 4.2.2" Category="Package Dependency" />
+    <Link Source="angular-material.TypeScript.DefinitelyTyped 0.1.0" Target="jquery.TypeScript.DefinitelyTyped 2.3.0" Category="Package Dependency" />
+    <Link Source="angular-material.TypeScript.DefinitelyTyped 0.1.0" Target="angularjs.TypeScript.DefinitelyTyped 4.2.2" Category="Package Dependency" />
+    <Link Source="angular-protractor.TypeScript.DefinitelyTyped 2.1.3" Target="selenium-webdriver.TypeScript.DefinitelyTyped 0.3.9" Category="Package Dependency" />
+    <Link Source="angular-ui-bootstrap.TypeScript.DefinitelyTyped 0.1.7" Target="jquery.TypeScript.DefinitelyTyped 2.3.0" Category="Package Dependency" />
+    <Link Source="angular-ui-bootstrap.TypeScript.DefinitelyTyped 0.1.7" Target="angularjs.TypeScript.DefinitelyTyped 4.2.2" Category="Package Dependency" />
+    <Link Source="jquery.timer.TypeScript.DefinitelyTyped 0.0.4" Target="jquery.TypeScript.DefinitelyTyped 2.3.0" Category="Package Dependency" />
+    <Link Source="jQuery.UI.Combined 1.11.4" Target="jQuery 2.1.4" Category="Package Dependency" />
+    <Link Source="Protractor 0.6.0" Target="Selenium.WebDriver 2.46.0" Category="Package Dependency" />
+    <Link Source="DiplomaMunka" Target="Angular.UI.Bootstrap 0.13.4" Category="Installed Package" />
+    <Link Source="DiplomaMunka" Target="Angular.UI.Utils 0.2.3" Category="Installed Package" />
+    <Link Source="DiplomaMunka" Target="AngularJS.Animate 1.4.6" Category="Installed Package" />
+    <Link Source="DiplomaMunka" Target="AngularJS.Aria 1.4.6" Category="Installed Package" />
+    <Link Source="DiplomaMunka" Target="AngularJS.Resource 1.4.6" Category="Installed Package" />
+    <Link Source="DiplomaMunka" Target="AngularJS.Route 1.4.6" Category="Installed Package" />
+    <Link Source="DiplomaMunka" Target="angular-local-storage.TypeScript.DefinitelyTyped 2.0.9" Category="Installed Package" />
+    <Link Source="DiplomaMunka" Target="angular-material.TypeScript.DefinitelyTyped 0.1.0" Category="Installed Package" />
+    <Link Source="DiplomaMunka" Target="angular-protractor.TypeScript.DefinitelyTyped 2.1.3" Category="Installed Package" />
+    <Link Source="DiplomaMunka" Target="angular-ui-bootstrap.TypeScript.DefinitelyTyped 0.1.7" Category="Installed Package" />
+    <Link Source="DiplomaMunka" Target="jasmine.TypeScript.DefinitelyTyped 1.4.0" Category="Installed Package" />
+    <Link Source="DiplomaMunka" Target="JasmineTest 2.2.0" Category="Installed Package" />
+    <Link Source="DiplomaMunka" Target="jquery.timer.TypeScript.DefinitelyTyped 0.0.4" Category="Installed Package" />
+    <Link Source="DiplomaMunka" Target="jQuery.UI.Combined 1.11.4" Category="Installed Package" />
+    <Link Source="DiplomaMunka" Target="Protractor 0.6.0" Category="Installed Package" />
+  </Links>
+  <Categories>
+    <Category Id="Project" />
+    <Category Id="Package" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Project" ValueLabel="True">
+      <Condition Expression="HasCategory('Project')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Package Dependency" ValueLabel="True">
+      <Condition Expression="HasCategory('Package Dependency')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+</DirectedGraph>
