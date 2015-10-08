@@ -53,6 +53,6 @@
         <textarea id="typedText" name="typedText" ng-keypress="LessonCtrl.keyPressHandler($event)" autofocus ng-model="LessonCtrl.typedText" ng-trim="false" ng-paste="$event.preventDefault()"></textarea>
     </form>
 
-    <lesson-result></lesson-result>
+    <lesson-result ng-hide="LessonCtrl.resultIsHidden"></lesson-result>
 
 </div>

@@ -57,6 +57,7 @@ var App;
             this.typedText = '';
             this.scope = $scope;
             this.statistic = new Statistic();
+            this.resultIsHidden = true;
         }
         LessonCtrl.prototype.keyPressHandler = function ($event) {
             var char = String.fromCharCode($event.which);
@@ -70,6 +71,7 @@ var App;
                 if (tempTyped == this.lesson.text[0]) {
                 }
                 if (tempTyped == this.lesson.text) {
+                    this.resultIsHidden = false;
                 }
             }
         };

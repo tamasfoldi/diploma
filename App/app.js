@@ -49,6 +49,7 @@ var App;
         .directive("lessonResult", function () {
         return {
             restrict: 'E',
+            transclude: true,
             templateUrl: 'App/partials/lesson-result.html'
         };
     })
