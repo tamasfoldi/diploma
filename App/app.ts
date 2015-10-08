@@ -47,7 +47,7 @@ module App {
             }
         ])
         .controller("MenuCtrl", ["$location", 'LessonService', MenuCtrl])
-        .controller("LessonCtrl", ["$location", '$scope', 'LessonService', LessonCtrl])
+        .controller("LessonCtrl", ["$location", 'LessonService', LessonCtrl])
         .directive("lessonResult", () => {
             return {
                 restrict: 'E',

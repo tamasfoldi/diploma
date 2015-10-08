@@ -67,11 +67,10 @@ module App {
         resultIsHidden: boolean;
         textareaIsDisabled: boolean;
 
-        constructor($location: ng.ILocationService, $scope: ng.IScope, LessonService: ng.resource.IResourceClass<ILesson>) {        
+        constructor($location: ng.ILocationService, LessonService: ng.resource.IResourceClass<ILesson>) {        
             this.location = $location;
             this.lesson = LessonService.get({ lessonId: "lesson" + this.location.search().id });
             this.typedText = '';
-            this.scope = $scope;
             this.statistic = new Statistic();
             this.resultIsHidden = true;
             this.textareaIsDisabled = false;

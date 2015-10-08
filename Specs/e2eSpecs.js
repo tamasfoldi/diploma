@@ -29,6 +29,17 @@ describe('End-To-End Specs', function () {
             element(by.model('LessonCtrl.typedText')).sendKeys('AT');
             expect(element(by.model('LessonCtrl.typedText')).getAttribute('value')).toEqual('T');
         });
+        it('should show the result the correct text was "inserted"', function () {
+            expect(element(by.css('lesson-result')).isDisplayed()).toBeFalsy();
+            element(by.model('LessonCtrl.typedText')).sendKeys('This text should be typed');
+            expect(element(by.css('lesson-result')).isDisplayed()).toBeTruthy();
+        });
+        if ('should show the result after the correct text was "inserted"', function () {
+            expect(element(by.css('textarea')).isEnabled()).toBeTruthy();
+            element(by.model('LessonCtrl.typedText')).sendKeys('This text should be typed');
+            expect(element(by.css('textarea')).isEnabled()).toBeFalsy();
+        })
+            ;
     });
 });
 //describe('angularjs homepage todo list', function () {

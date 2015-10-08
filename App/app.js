@@ -45,7 +45,7 @@ var App;
         }
     ])
         .controller("MenuCtrl", ["$location", 'LessonService', App.MenuCtrl])
-        .controller("LessonCtrl", ["$location", '$scope', 'LessonService', App.LessonCtrl])
+        .controller("LessonCtrl", ["$location", 'LessonService', App.LessonCtrl])
         .directive("lessonResult", function () {
         return {
             restrict: 'E',

@@ -51,11 +51,10 @@ var App;
 (function (App) {
     var Statistic = Model.Statistic;
     var LessonCtrl = (function () {
-        function LessonCtrl($location, $scope, LessonService) {
+        function LessonCtrl($location, LessonService) {
             this.location = $location;
             this.lesson = LessonService.get({ lessonId: "lesson" + this.location.search().id });
             this.typedText = '';
-            this.scope = $scope;
             this.statistic = new Statistic();
             this.resultIsHidden = true;
             this.textareaIsDisabled = false;
