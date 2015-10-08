@@ -102,5 +102,13 @@ describe('Controller Specs', () => {
                 }
             );
         });
+
+        it('shouldnt enable invalid keypresses but should enable valid ones', () => {
+            var event = { key: "A" };
+            spyOn(lessonCtrl, 'keyPressHandler').and.callThrough();
+            lessonCtrl.keyPressHandler(event);
+
+        });
+
     });
 }); 

@@ -60,10 +60,35 @@ module App {
     export class LessonCtrl {
         location: ng.ILocationService;
         lesson: ILesson;
+        typedText: string;
 
         constructor($location: ng.ILocationService, LessonService: ng.resource.IResourceClass<ILesson>) {        
             this.location = $location;
             this.lesson = LessonService.get({ lessonId: "lesson" + this.location.search().id });
+            this.typedText = '';
         }
+
+        keyPressHandler($event) {
+            console.log($event);
+            var tempTyped = this.typedText + $event.key;
+            console.log(tempTyped);
+            if (tempTyped != this.lesson.text.substr(0, tempTyped.length)) {
+                $event.preventDefault();
+                //this.lesson.getStatistic().increasNofMistakes();
+            }
+            else {
+                //this.lesson.getStatistic().increaseNofCorrectKeyPresses();
+                if (tempTyped == this.lesson.text[0]) { //at the first character the timer starts
+                    //this.scope.$broadcast('timer-start');
+                }
+                if (tempTyped == this.lesson.text) { //at the last character the timer stops and the textarea sets to disabled
+                    this.typedText = tempTyped;
+                    //this.isDisabled = true;
+                   // this.scope.$broadcast('timer-stop');
+                }
+            }
+        }
+
+        
     }
 }

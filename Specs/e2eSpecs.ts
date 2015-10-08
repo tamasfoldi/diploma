@@ -38,6 +38,10 @@ describe('End-To-End Specs', () => {
             expect(element(by.id('LessonText')).getText()).toBe('This text should be typed');
         });
 
+        it('shouldnt enable invalid keypresses but should accept valid ones', () => {
+            element(by.model('LessonCtrl.typedText')).sendKeys('AT');
+            expect(element(by.model('LessonCtrl.typedText')).getAttribute('value')).toEqual('T');
+        });
     });
 });
 

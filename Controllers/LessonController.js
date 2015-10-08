@@ -53,7 +53,24 @@ var App;
         function LessonCtrl($location, LessonService) {
             this.location = $location;
             this.lesson = LessonService.get({ lessonId: "lesson" + this.location.search().id });
+            this.typedText = '';
         }
+        LessonCtrl.prototype.keyPressHandler = function ($event) {
+            console.log($event);
+            var tempTyped = this.typedText + $event.key;
+            console.log(tempTyped);
+            if (tempTyped != this.lesson.text.substr(0, tempTyped.length)) {
+                $event.preventDefault();
+            }
+            else {
+                //this.lesson.getStatistic().increaseNofCorrectKeyPresses();
+                if (tempTyped == this.lesson.text[0]) {
+                }
+                if (tempTyped == this.lesson.text) {
+                    this.typedText = tempTyped;
+                }
+            }
+        };
         return LessonCtrl;
     })();
     App.LessonCtrl = LessonCtrl;

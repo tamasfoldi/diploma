@@ -25,6 +25,10 @@ describe('End-To-End Specs', function () {
         it('s lesson text should be "This text should be typed"', function () {
             expect(element(by.id('LessonText')).getText()).toBe('This text should be typed');
         });
+        it('shouldnt enable invalid keypresses but should accept valid ones', function () {
+            element(by.model('LessonCtrl.typedText')).sendKeys('AT');
+            expect(element(by.model('LessonCtrl.typedText')).getAttribute('value')).toEqual('T');
+        });
     });
 });
 //describe('angularjs homepage todo list', function () {
