@@ -47,7 +47,13 @@ module App {
             }
         ])
         .controller("MenuCtrl", ["$location", 'LessonService', MenuCtrl])
-        .controller("LessonCtrl", ["$location", 'LessonService', LessonCtrl])
+        .controller("LessonCtrl", ["$location", '$scope', 'LessonService', LessonCtrl])
+        .directive("lessonResult", () => {
+            return {
+                restrict: 'E',
+                templateUrl: 'App/partials/lesson-result.html'
+            };
+        })
         .config(($routeProvider: ng.route.IRouteProvider) => {
             $routeProvider
                 .when("/", {

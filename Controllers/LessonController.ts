@@ -56,34 +56,37 @@
 
 module App {
     import ILesson = Model.ILesson;
+    import Statistic = Model.Statistic;
 
     export class LessonCtrl {
         location: ng.ILocationService;
         lesson: ILesson;
         typedText: string;
+        scope: ng.IScope;
+        statistic : Statistic;
 
-        constructor($location: ng.ILocationService, LessonService: ng.resource.IResourceClass<ILesson>) {        
+        constructor($location: ng.ILocationService, $scope: ng.IScope, LessonService: ng.resource.IResourceClass<ILesson>) {        
             this.location = $location;
             this.lesson = LessonService.get({ lessonId: "lesson" + this.location.search().id });
             this.typedText = '';
+            this.scope = $scope;
+            this.statistic = new Statistic();
         }
 
-        keyPressHandler($event) {
-            console.log($event);
-            var tempTyped = this.typedText + $event.key;
-            console.log(tempTyped);
+        public keyPressHandler($event) {
+            var char: string = String.fromCharCode($event.which);
+            var tempTyped = this.typedText + char;
             if (tempTyped != this.lesson.text.substr(0, tempTyped.length)) {
                 $event.preventDefault();
-                //this.lesson.getStatistic().increasNofMistakes();
+                this.statistic.increasNofMistakes();
             }
             else {
-                //this.lesson.getStatistic().increaseNofCorrectKeyPresses();
+                this.statistic.increaseNofCorrectKeyPresses();
                 if (tempTyped == this.lesson.text[0]) { //at the first character the timer starts
                     //this.scope.$broadcast('timer-start');
                 }
                 if (tempTyped == this.lesson.text) { //at the last character the timer stops and the textarea sets to disabled
-                    this.typedText = tempTyped;
-                    //this.isDisabled = true;
+                    
                    // this.scope.$broadcast('timer-stop');
                 }
             }

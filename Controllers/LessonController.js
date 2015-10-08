@@ -49,25 +49,27 @@
 //}
 var App;
 (function (App) {
+    var Statistic = Model.Statistic;
     var LessonCtrl = (function () {
-        function LessonCtrl($location, LessonService) {
+        function LessonCtrl($location, $scope, LessonService) {
             this.location = $location;
             this.lesson = LessonService.get({ lessonId: "lesson" + this.location.search().id });
             this.typedText = '';
+            this.scope = $scope;
+            this.statistic = new Statistic();
         }
         LessonCtrl.prototype.keyPressHandler = function ($event) {
-            console.log($event);
-            var tempTyped = this.typedText + $event.key;
-            console.log(tempTyped);
+            var char = String.fromCharCode($event.which);
+            var tempTyped = this.typedText + char;
             if (tempTyped != this.lesson.text.substr(0, tempTyped.length)) {
                 $event.preventDefault();
+                this.statistic.increasNofMistakes();
             }
             else {
-                //this.lesson.getStatistic().increaseNofCorrectKeyPresses();
+                this.statistic.increaseNofCorrectKeyPresses();
                 if (tempTyped == this.lesson.text[0]) {
                 }
                 if (tempTyped == this.lesson.text) {
-                    this.typedText = tempTyped;
                 }
             }
         };
