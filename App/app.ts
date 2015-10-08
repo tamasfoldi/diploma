@@ -36,7 +36,7 @@
 //}
 
 module App {
-    var typewritingapp: ng.IModule = angular.module("typewritingApp", ['ngRoute', 'ngResource'])
+    var typewritingapp: ng.IModule = angular.module("typewritingApp", ['ngRoute', 'ngResource', 'timer'])
         .factory('LessonService', [
             '$resource', ($resource: ng.resource.IResourceService): App.ILessonService => {
                 // Return the resource, include your custom actions
@@ -47,7 +47,8 @@ module App {
             }
         ])
         .controller("MenuCtrl", ["$location", 'LessonService', MenuCtrl])
-        .controller("LessonCtrl", ["$location", 'LessonService', LessonCtrl])
+        .controller("LessonCtrl", ["$location", '$scope', 'LessonService', LessonCtrl])
+        .controller("TimerCtrl", ['$interval', TimerCtrl])
         .directive("lessonResult", () => {
             return {
                 restrict: 'E',
@@ -55,6 +56,16 @@ module App {
                 templateUrl: 'App/partials/lesson-result.html'
             };
         })
+        .directive("autofocus", ["$timeout", function ($timeout) {
+            return {
+                restrict: "A",
+                link: function ($scope, $element) {
+                    $timeout(function () {
+                        $element[0].focus();
+                    });
+                }
+            }
+        }])
         .config(($routeProvider: ng.route.IRouteProvider) => {
             $routeProvider
                 .when("/", {

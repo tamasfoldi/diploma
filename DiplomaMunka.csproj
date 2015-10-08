@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="App\app.ts" />
+    <TypeScriptCompile Include="Directives\LessonResultDirective.ts" />
     <TypeScriptCompile Include="Model\ILesson.ts" />
     <TypeScriptCompile Include="Services\ILessonService.ts" />
     <TypeScriptCompile Include="Model\Statistic.ts" />

@@ -4,6 +4,7 @@
 /// <reference path="./Controllers/TimerController.ts" />
 /// <reference path="./Controllers/LessonController.ts"/>
 /// <reference path="./Controllers/MenuController.ts"/>
+/// <reference path="./Directives/LessonResultDirective.ts"/>
 /// <reference path="./Scripts/typings/angular-local-storage/angular-local-storage.d.ts" />
 /// <reference path="./Scripts/typings/angularjs/angular-route.d.ts" />
 /// <reference path="./Scripts/typings/angularjs/angular-resource.d.ts" />

@@ -51,13 +51,19 @@ var App;
 (function (App) {
     var Statistic = Model.Statistic;
     var LessonCtrl = (function () {
-        function LessonCtrl($location, LessonService) {
+        function LessonCtrl($location, $scope, LessonService) {
             this.location = $location;
             this.lesson = LessonService.get({ lessonId: "lesson" + this.location.search().id });
             this.typedText = '';
+            this.scope = $scope;
             this.statistic = new Statistic();
             this.resultIsHidden = true;
             this.textareaIsDisabled = false;
+            this.scope.$on('timer-stopped', function (event, data) {
+                var scope = event.currentScope;
+                scope.LessonCtrl.statistic.calculateTypingSpeed(data.millis);
+                scope.LessonCtrl.statistic.setTime(data.millis);
+            });
         }
         LessonCtrl.prototype.keyPressHandler = function ($event) {
             var char = String.fromCharCode($event.which);
@@ -69,11 +75,13 @@ var App;
             else {
                 this.statistic.increaseNofCorrectKeyPresses();
                 if (tempTyped == this.lesson.text[0]) {
+                    this.scope.$broadcast('timer-start');
                 }
                 if (tempTyped == this.lesson.text) {
                     this.resultIsHidden = false;
                     this.textareaIsDisabled = true;
                     this.typedText = tempTyped;
+                    this.scope.$broadcast('timer-stop');
                 }
             }
         };

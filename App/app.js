@@ -35,7 +35,7 @@
 //}
 var App;
 (function (App) {
-    var typewritingapp = angular.module("typewritingApp", ['ngRoute', 'ngResource'])
+    var typewritingapp = angular.module("typewritingApp", ['ngRoute', 'ngResource', 'timer'])
         .factory('LessonService', [
         '$resource', function ($resource) {
             // Return the resource, include your custom actions
@@ -45,7 +45,8 @@ var App;
         }
     ])
         .controller("MenuCtrl", ["$location", 'LessonService', App.MenuCtrl])
-        .controller("LessonCtrl", ["$location", 'LessonService', App.LessonCtrl])
+        .controller("LessonCtrl", ["$location", '$scope', 'LessonService', App.LessonCtrl])
+        .controller("TimerCtrl", ['$interval', App.TimerCtrl])
         .directive("lessonResult", function () {
         return {
             restrict: 'E',
@@ -53,6 +54,16 @@ var App;
             templateUrl: 'App/partials/lesson-result.html'
         };
     })
+        .directive("autofocus", ["$timeout", function ($timeout) {
+            return {
+                restrict: "A",
+                link: function ($scope, $element) {
+                    $timeout(function () {
+                        $element[0].focus();
+                    });
+                }
+            };
+        }])
         .config(function ($routeProvider) {
         $routeProvider
             .when("/", {

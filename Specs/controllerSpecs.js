@@ -1,6 +1,7 @@
 /// <reference path="../references.ts" />
 describe('Controller Specs', function () {
-    beforeEach(angular.mock.module('typewritingApp'));
+    beforeEach(angular.mock.module('timer'));
+    beforeEach(angular.mock.module('typewritingApp', ['timer']));
     beforeEach(function () {
         jasmine.addCustomEqualityTester(function (first, second) {
             return angular.equals(first, second);
@@ -59,12 +60,12 @@ describe('Controller Specs', function () {
         var location;
         var $httpBackend;
         var lessonService;
-        beforeEach(function () { return inject(function ($location, LessonService) {
+        beforeEach(function () { return inject(function ($location, $scope, LessonService) {
             location = $location;
             lessonService = LessonService;
             location.path('/lesson');
             location.search('id', 1);
-            lessonCtrl = new App.LessonCtrl(location, LessonService);
+            lessonCtrl = new App.LessonCtrl(location, $scope, LessonService);
         }); });
         beforeEach(inject(function (_$httpBackend_, $rootScope, $controller) {
             $httpBackend = _$httpBackend_;
