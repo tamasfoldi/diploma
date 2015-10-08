@@ -65,6 +65,7 @@ module App {
         scope: ng.IScope;
         statistic: Statistic;
         resultIsHidden: boolean;
+        textareaIsDisabled: boolean;
 
         constructor($location: ng.ILocationService, $scope: ng.IScope, LessonService: ng.resource.IResourceClass<ILesson>) {        
             this.location = $location;
@@ -73,6 +74,7 @@ module App {
             this.scope = $scope;
             this.statistic = new Statistic();
             this.resultIsHidden = true;
+            this.textareaIsDisabled = false;
         }
 
         public keyPressHandler($event) {
@@ -89,6 +91,8 @@ module App {
                 }
                 if (tempTyped == this.lesson.text) { //at the last character the timer stops and the textarea sets to disabled
                     this.resultIsHidden = false;
+                    this.textareaIsDisabled = true;
+                    this.typedText = tempTyped;
                     // this.scope.$broadcast('timer-stop');
                 }
             }

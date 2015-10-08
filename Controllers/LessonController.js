@@ -58,6 +58,7 @@ var App;
             this.scope = $scope;
             this.statistic = new Statistic();
             this.resultIsHidden = true;
+            this.textareaIsDisabled = false;
         }
         LessonCtrl.prototype.keyPressHandler = function ($event) {
             var char = String.fromCharCode($event.which);
@@ -72,6 +73,8 @@ var App;
                 }
                 if (tempTyped == this.lesson.text) {
                     this.resultIsHidden = false;
+                    this.textareaIsDisabled = true;
+                    this.typedText = tempTyped;
                 }
             }
         };
