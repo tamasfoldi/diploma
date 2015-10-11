@@ -1,6 +1,0 @@
-﻿<h3 align="center" id="MenuTitle">Select a lesson</h3>
-<div class="btn-group" ng-repeat="lesson in MenuController.lessons | orderBy: 'id'">
-    <button type="button" class="btn btn-default btn-sm" ng-click="MenuController.loadLesson(lesson.id)" id="LessonId{{lesson.id}}">
-        {{lesson.name}}
-    </button>
-</div>

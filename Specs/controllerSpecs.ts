@@ -1,8 +1,7 @@
 ﻿/// <reference path="../references.ts" />
 
 describe('Controller Specs', () => {
-    beforeEach(angular.mock.module('timer'));
-    beforeEach(angular.mock.module('typewritingApp', ['timer']));
+    beforeEach(angular.mock.module('typewritingApp'));
 
     beforeEach(() => {
         jasmine.addCustomEqualityTester((first, second) => {
@@ -74,14 +73,16 @@ describe('Controller Specs', () => {
         var location: ng.ILocationService;
         var $httpBackend: ng.IHttpBackendService;
         var lessonService;
+        var scope;
 
 
-        beforeEach(() => inject(($location, $scope, LessonService) => {
+        beforeEach(() => inject(($location, $rootScope: ng.IRootScopeService, LessonService) => {
             location = $location;
             lessonService = LessonService;
             location.path('/lesson');
             location.search('id', 1);
-            lessonCtrl = new App.LessonCtrl(location, $scope, LessonService);
+            scope = $rootScope.$new();
+            lessonCtrl = new App.LessonCtrl(location, scope, LessonService);
         }));
 
         beforeEach(inject(function (_$httpBackend_, $rootScope, $controller) {

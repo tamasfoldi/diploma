@@ -5,11 +5,8 @@ describe('End-To-End Specs', function () {
         beforeEach(function () {
             browser.get('http://localhost:5004/#/');
         });
-        it('should have the title as "Select a Lesson"', function () {
-            expect(element(by.id('MenuTitle')).getText()).toBe('Select a lesson');
-        });
         it('should have the title as Lesson 1 after clicking on the first lesson button', function () {
-            var button = element.all(by.repeater("lesson in MenuController.lessons | orderBy: 'id'").row(0).column('lesson.name'));
+            var button = element.all(by.repeater("lesson in MenuCtrl.lessons | orderBy: 'id'").row(0).column('lesson.name'));
             button.click();
             expect(element(by.id('LessonTitle')).getText()).toBe('Lesson 1');
         });

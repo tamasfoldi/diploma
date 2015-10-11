@@ -52,8 +52,12 @@ var App;
     var Statistic = Model.Statistic;
     var LessonCtrl = (function () {
         function LessonCtrl($location, $scope, LessonService) {
+            var _this = this;
             this.location = $location;
             this.lesson = LessonService.get({ lessonId: "lesson" + this.location.search().id });
+            this.lesson.$promise.then(function (data) {
+                _this.textToBeType = data.text;
+            });
             this.typedText = '';
             this.scope = $scope;
             this.statistic = new Statistic();
@@ -74,6 +78,7 @@ var App;
             }
             else {
                 this.statistic.increaseNofCorrectKeyPresses();
+                this.textToBeType = this.lesson.text.substr(this.typedText.length + 1, this.lesson.text.length);
                 if (tempTyped == this.lesson.text[0]) {
                     this.scope.$broadcast('timer-start');
                 }

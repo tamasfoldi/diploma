@@ -35,7 +35,7 @@
 //}
 var App;
 (function (App) {
-    var typewritingapp = angular.module("typewritingApp", ['ngRoute', 'ngResource', 'timer'])
+    var typewritingapp = angular.module("typewritingApp", ['ngRoute', 'ngResource', 'ngMaterial', 'timer'])
         .factory('LessonService', [
         '$resource', function ($resource) {
             // Return the resource, include your custom actions
@@ -64,12 +64,20 @@ var App;
                 }
             };
         }])
+        .directive('sideMenu', function () {
+        return {
+            restrict: 'E',
+            transclude: true,
+            scope: {},
+            controller: App.MenuCtrl,
+            controllerAs: "MenuCtrl",
+            templateUrl: 'App/partials/side-menu.html'
+        };
+    })
         .config(function ($routeProvider) {
         $routeProvider
             .when("/", {
-            templateUrl: "App/menu.html",
-            controller: App.MenuCtrl,
-            controllerAs: "MenuController"
+            templateUrl: "App/templates/newLesson.html"
         })
             .when('/lesson', {
             templateUrl: "App/lesson.html",

@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Tue Sep 29 2015 12:28:47 GMT+0200 (Közép-európai nyári idő )
+// Generated on Fri Oct 09 2015 17:21:55 GMT+0200 (Közép-európai nyári idő )
 
 module.exports = function(config) {
   config.set({
@@ -15,17 +15,27 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-	  'F:/Dokumentumok/BME/Diploma/Scripts/angular.js',
-	  'F:/Dokumentumok/BME/Diploma/Scripts/angular-*.js',	  
-	  'F:/Dokumentumok/BME/Diploma/Scripts/angular-ui/*.js', 
-	  'F:/Dokumentumok/BME/Diploma/App/*.js',
-	  'F:/Dokumentumok/BME/Diploma/Controllers/*.js', 	  
-      'F:/Dokumentumok/BME/Diploma/Specs/*.js'
-    ],
+		'D:/bme/diploma/Scripts/angular.js',
+		'D:/bme/diploma/Scripts/angular-mocks.js',
+		'D:/bme/diploma/Scripts/angular-route.js',
+		'D:/bme/diploma/Scripts/angular-resource.js',
+		'D:/bme/diploma/Scripts/angular-timer-all.min.js',
+		'D:/bme/diploma/Scripts/angular-*.js',
+		'D:/bme/diploma/Scripts/angular-ui/*.js',
+		'D:/bme/diploma/App/app.js',
+		'D:/bme/diploma/Services/**.js',
+				
+		'D:/bme/diploma/Model/**.js',
+		'D:/bme/diploma/Controllers/**.js',
+		'D:/bme/diploma/Specs/controllerSpecs.js',
+		
+		
+		],
 
 
     // list of files to exclude
     exclude: [
+
     ],
 
 
@@ -38,7 +48,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'xml'],
 
 
     // web server port
@@ -60,7 +70,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Firefox'],
+    browsers: ['PhantomJS', 'Chrome', 'Firefox'],
 
 
     // Continuous Integration mode

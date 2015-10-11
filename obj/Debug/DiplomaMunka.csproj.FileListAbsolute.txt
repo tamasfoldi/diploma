@@ -1,0 +1,11 @@
+D:\bme\diploma\bin\DiplomaMunka.dll.config
+D:\bme\diploma\bin\DiplomaMunka.dll
+D:\bme\diploma\bin\DiplomaMunka.pdb
+D:\bme\diploma\bin\Protractor.dll
+D:\bme\diploma\bin\WebDriver.dll
+D:\bme\diploma\bin\Protractor.pdb
+D:\bme\diploma\bin\Protractor.xml
+D:\bme\diploma\bin\WebDriver.xml
+D:\bme\diploma\obj\Debug\DiplomaMunka.csprojResolveAssemblyReference.cache
+D:\bme\diploma\obj\Debug\DiplomaMunka.dll
+D:\bme\diploma\obj\Debug\DiplomaMunka.pdb

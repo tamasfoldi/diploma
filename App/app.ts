@@ -36,11 +36,11 @@
 //}
 
 module App {
-    var typewritingapp: ng.IModule = angular.module("typewritingApp", ['ngRoute', 'ngResource', 'timer'])
+    var typewritingapp: ng.IModule = angular.module("typewritingApp", ['ngRoute', 'ngResource', 'ngMaterial', 'timer'])
         .factory('LessonService', [
             '$resource', ($resource: ng.resource.IResourceService): App.ILessonService => {
                 // Return the resource, include your custom actions
-                return <App.ILessonService> $resource('/App/lessons/:lessonId.json', {}, {
+                return <App.ILessonService>$resource('/App/lessons/:lessonId.json', {}, {
                     query: { method: 'GET', params: { lessonId: 'lessons' }, isArray: true }
                 });
 
@@ -66,12 +66,20 @@ module App {
                 }
             }
         }])
+        .directive('sideMenu', () => {            
+            return {
+                restrict: 'E',
+                transclude: true,
+                scope: {},
+                controller: App.MenuCtrl,
+                controllerAs: "MenuCtrl",
+                templateUrl: 'App/partials/side-menu.html'
+            }
+        })
         .config(($routeProvider: ng.route.IRouteProvider) => {
             $routeProvider
                 .when("/", {
-                    templateUrl: "App/menu.html",
-                    controller: App.MenuCtrl,
-                    controllerAs: "MenuController"
+                    templateUrl: "App/templates/newLesson.html"                                                        
                 })
                 .when('/lesson', {
                     templateUrl: "App/lesson.html",

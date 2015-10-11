@@ -10,6 +10,8 @@
                   autofocus ng-model="typewriting.typedText" ng-disabled="typewriting.getIsDisabled()" ng-trim="false" ng-paste="$event.preventDefault()"/>
     </form>
 
+   
+
     <div ng-hide="!typewriting.getIsDisabled()" id="lesson_result">
         <table class="table table-condensed table-striped">
             <caption>Congratulation you have completed this lesson with the following statistic:</caption>
@@ -44,15 +46,22 @@
 
 </div>-->
 
-<div id="LessonContainer">
-    <h1 id="LessonTitle">{{LessonCtrl.lesson.name}}</h1>
+<div layout="row" layout-wrap>
+    <side-menu></side-menu>
+    <div id="LessonContainer" flex>
+        <h1 id="LessonTitle">{{LessonCtrl.lesson.name}}</h1>
 
-    <p id="LessonText">{{LessonCtrl.lesson.text}}</p>
-    <timer ng-hide="true"></timer>
-    <form name="typingForm">
-        <textarea id="typedText" name="typedText" ng-keypress="LessonCtrl.keyPressHandler($event)" ng-disabled="LessonCtrl.textareaIsDisabled" autofocus ng-model="LessonCtrl.typedText" ng-trim="false" ng-paste="$event.preventDefault()"></textarea>
-    </form>
+        <div id="LessonText">
+            <p><span style="color:red">{{LessonCtrl.typedText}}</span>{{LessonCtrl.textToBeType}}</p>
+        </div>
+        <timer ng-hide="true"></timer>
 
-    <lesson-result ng-hide="LessonCtrl.resultIsHidden"></lesson-result>
+        <md-input-container flex>
+            <label for="typedText">Typed text</label>
+            <textarea name="typedText" id="typedText" ng-paste="$event.preventDefault()" ng-disabled="LessonCtrl.textareaIsDisabled" autofocus="" ng-model="LessonCtrl.typedText" columns="1" ng-trim="false" ng-keypress="LessonCtrl.keyPressHandler($event)"></textarea>
+        </md-input-container>
 
+        <lesson-result ng-hide="LessonCtrl.resultIsHidden"></lesson-result>
+
+    </div>
 </div>

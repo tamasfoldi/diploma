@@ -1,0 +1,15 @@
+﻿<div layout="row" flex>    
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+        <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Menu</h1>
+        </md-toolbar>
+        <md-content layout-padding="">
+            <h3>Lessons</h3>
+            <section layout="column" layout-align="center center" layout-wrap>
+                <md-button ng-click="MenuCtrl.loadLesson(lesson.id)" id="LessonId{{lesson.id}}" ng-repeat="lesson in MenuCtrl.lessons | orderBy: 'id'">
+                    {{lesson.name}}
+                </md-button>
+            </section>
+        </md-content>
+    </md-sidenav>
+</div>

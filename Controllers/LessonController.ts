@@ -62,14 +62,19 @@ module App {
         location: ng.ILocationService;
         lesson: ILesson;
         typedText: string;
+        textToBeType: string;
         scope: ng.IScope;
         statistic: Statistic;
         resultIsHidden: boolean;
         textareaIsDisabled: boolean;
+        interval: ng.IIntervalService;
 
         constructor($location: ng.ILocationService, $scope, LessonService: ng.resource.IResourceClass<ILesson>) {        
             this.location = $location;
             this.lesson = LessonService.get({ lessonId: "lesson" + this.location.search().id });
+            this.lesson.$promise.then((data: ILesson) => {
+                this.textToBeType = data.text;
+            });
             this.typedText = '';
             this.scope = $scope
             this.statistic = new Statistic();
@@ -91,6 +96,7 @@ module App {
             }
             else {
                 this.statistic.increaseNofCorrectKeyPresses();
+                this.textToBeType = this.lesson.text.substr(this.typedText.length + 1, this.lesson.text.length);
                 if (tempTyped == this.lesson.text[0]) { //at the first character the timer starts
                     this.scope.$broadcast('timer-start');
                 }
@@ -101,6 +107,7 @@ module App {
                     this.scope.$broadcast('timer-stop');
                 }
             }
+            
         }
 
         
