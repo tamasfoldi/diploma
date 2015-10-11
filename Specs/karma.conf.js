@@ -15,19 +15,19 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-		'D:/bme/diploma/Scripts/angular.js',
-		'D:/bme/diploma/Scripts/angular-mocks.js',
-		'D:/bme/diploma/Scripts/angular-route.js',
-		'D:/bme/diploma/Scripts/angular-resource.js',
-		'D:/bme/diploma/Scripts/angular-timer-all.min.js',
-		'D:/bme/diploma/Scripts/angular-*.js',
-		'D:/bme/diploma/Scripts/angular-ui/*.js',
-		'D:/bme/diploma/App/app.js',
-		'D:/bme/diploma/Services/**.js',
+		'../Scripts/angular.js',
+		'../Scripts/angular-mocks.js',
+		'../Scripts/angular-route.js',
+		'../Scripts/angular-resource.js',
+		'../Scripts/angular-timer-all.min.js',
+		'../Scripts/angular-*.js',
+		'../Scripts/angular-ui/*.js',
+		'../App/app.js',
+		'../Services/**.js',
 				
-		'D:/bme/diploma/Model/**.js',
-		'D:/bme/diploma/Controllers/**.js',
-		'D:/bme/diploma/Specs/controllerSpecs.js',
+		'../Model/**.js',
+		'../Controllers/**.js',
+		'../Specs/controllerSpecs.js',
 		
 		
 		],
