@@ -9,3 +9,14 @@ D:\bme\diploma\bin\WebDriver.xml
 D:\bme\diploma\obj\Debug\DiplomaMunka.csprojResolveAssemblyReference.cache
 D:\bme\diploma\obj\Debug\DiplomaMunka.dll
 D:\bme\diploma\obj\Debug\DiplomaMunka.pdb
+F:\Dokumentumok\BME\Diploma\bin\DiplomaMunka.dll.config
+F:\Dokumentumok\BME\Diploma\bin\DiplomaMunka.dll
+F:\Dokumentumok\BME\Diploma\bin\DiplomaMunka.pdb
+F:\Dokumentumok\BME\Diploma\bin\Protractor.dll
+F:\Dokumentumok\BME\Diploma\bin\WebDriver.dll
+F:\Dokumentumok\BME\Diploma\bin\Protractor.pdb
+F:\Dokumentumok\BME\Diploma\bin\Protractor.xml
+F:\Dokumentumok\BME\Diploma\bin\WebDriver.xml
+F:\Dokumentumok\BME\Diploma\obj\Debug\DiplomaMunka.dll
+F:\Dokumentumok\BME\Diploma\obj\Debug\DiplomaMunka.pdb
+F:\Dokumentumok\BME\Diploma\obj\Debug\DiplomaMunka.csprojResolveAssemblyReference.cache
