@@ -27,7 +27,7 @@ module.exports = function(config) {
 				
 		'../Model/**.js',
 		'../Controllers/**.js',
-		'../Specs/ControllerSpecs.js',
+		'../Specs/ControllerSpecs/*.js',
 		
 		
 		],

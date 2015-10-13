@@ -89,13 +89,11 @@
     <Content Include="Scripts\jasmine\jasmine-html.js" />
     <Content Include="Scripts\jasmine\jasmine.js" />
     <Content Include="App\lessons\lessons.json" />
-    <Content Include="App\templates\newLesson.html" />
     <Content Include="App\lesson.html" />
     <Content Include="Specs\RegisterE2EConf.js" />
     <Content Include="Specs\LessonE2EConf.js" />
     <Content Include="Specs\Menu_E2EConf.js" />
     <Content Include="Specs\AIOE2EConf.js" />
-    <Content Include="Specs\karma.conf.js" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -135,7 +133,6 @@
     <Content Include="App\lessons\lesson1.json" />
     <Content Include="App\lessons\lesson2.json" />
     <Content Include="Specs\package.json" />
-    <Content Include="Specs\test-results.testxml" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
