@@ -19,4 +19,3 @@ F:\Dokumentumok\BME\Diploma\bin\Protractor.xml
 F:\Dokumentumok\BME\Diploma\bin\WebDriver.xml
 F:\Dokumentumok\BME\Diploma\obj\Debug\DiplomaMunka.dll
 F:\Dokumentumok\BME\Diploma\obj\Debug\DiplomaMunka.pdb
-F:\Dokumentumok\BME\Diploma\obj\Debug\DiplomaMunka.csprojResolveAssemblyReference.cache

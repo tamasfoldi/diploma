@@ -19,7 +19,6 @@
     <NuGetPackageImportStamp>2cdaaf8a</NuGetPackageImportStamp>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="app.css" />
     <Content Include="App\partials\lesson-result.html" />
     <Content Include="App\register.html" />
     <Content Include="Content\angular-material.min.css" />
@@ -92,7 +91,7 @@
     <Content Include="App\lesson.html" />
     <Content Include="Specs\RegisterE2EConf.js" />
     <Content Include="Specs\LessonE2EConf.js" />
-    <Content Include="Specs\Menu_E2EConf.js" />
+    <Content Include="Specs\MenuE2EConf.js" />
     <Content Include="Specs\AIOE2EConf.js" />
     <Content Include="web.config" />
   </ItemGroup>
@@ -132,7 +131,6 @@
     </Content>
     <Content Include="App\lessons\lesson1.json" />
     <Content Include="App\lessons\lesson2.json" />
-    <Content Include="Specs\package.json" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />

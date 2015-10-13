@@ -9,5 +9,9 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-xml-reporter": "^0.1.4",
     "phantomjs": "^1.9.18"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "mongoose": "^4.1.11"
   }
 }

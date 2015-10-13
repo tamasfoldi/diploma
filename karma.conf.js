@@ -15,19 +15,19 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-		'../Scripts/angular.js',
-		'../Scripts/angular-mocks.js',
-		'../Scripts/angular-route.js',
-		'../Scripts/angular-resource.js',
-		'../Scripts/angular-timer-all.min.js',
-		'../Scripts/angular-*.js',
-		'../Scripts/angular-ui/*.js',
-		'../App/app.js',
-		'../Services/**.js',
+		'Scripts/angular.js',
+		'Scripts/angular-mocks.js',
+		'Scripts/angular-route.js',
+		'Scripts/angular-resource.js',
+		'Scripts/angular-timer-all.min.js',
+		'Scripts/angular-*.js',
+		'Scripts/angular-ui/*.js',
+		'App/app.js',
+		'Services/**.js',
 				
-		'../Model/**.js',
-		'../Controllers/**.js',
-		'../Specs/ControllerSpecs/*.js',
+		'Model/**.js',
+		'Controllers/**.js',
+		'Specs/ControllerSpecs/*.js',
 		
 		
 		],
